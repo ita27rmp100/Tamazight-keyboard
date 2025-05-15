@@ -1,4 +1,4 @@
-import msvcrt , pyautogui
+import keyboard , pyautogui
 # kabyle alphabet
 kabyle_alphabet = [
     'a', 'e', 'i', 'u',
@@ -9,9 +9,8 @@ kabyle_alphabet = [
 
 while True :
     print("Press any key (Windows only)...")
-    key = msvcrt.getch()  # Waits for a key press
-    print(f"You pressed: {key.decode('utf-8')}")
-    pyautogui.hotkey(key.decode('utf-8'))
-    if(key.decode('utf-8')=="R") :
+    key = keyboard.read_event()  # Waits for a key press
+    print(f"You pressed: {key.name}")
+    if(key.name=="R") :
         pyautogui.write("ṛ")
 
