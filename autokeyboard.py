@@ -1,4 +1,5 @@
-import keyboard , pyautogui
+import pyautogui
+from pynput import keyboard
 # kabyle alphabet
 kabyle_alphabet = [
     'a', 'e', 'i', 'u',
@@ -7,10 +8,29 @@ kabyle_alphabet = [
     'v', 'w', 'x', 'y', 'z', 'ẓ'
 ]
 
-while True :
-    print("Press any key (Windows only)...")
-    key = keyboard.read_event()  # Waits for a key press
-    print(f"You pressed: {key.name}")
-    if(key.name=="R") :
-        pyautogui.write("ṛ")
+def on_press(key) :
+    try :
+        if key.char == "o" :
+            pyautogui.write("ɣ")
+        elif key.char == "c" :
+            pyautogui.write("ṣ")
+        else :
+            pyautogui.write(key.char)
+    except AttributeError :
+        if key == keyboard.Key.shift_r :
+            pyautogui.write("ḥ")
+        elif key == keyboard.Key.ctrl_r :
+            pyautogui.write("ṛ")
+        elif key == keyboard.Key.alt_l :
+            pyautogui.write("ṭ")
+        elif key == keyboard.Key.caps_lock :
+            pyautogui.write("ẓ")
+        else :
+            pass
 
+def on_release(key):
+    if key == keyboard.Key.esc:  # Exit on 'Esc' key
+        print("Exiting...")
+        return False
+with keyboard.Listener(on_press=on_press,on_release=on_release) as l :
+    l.join()
