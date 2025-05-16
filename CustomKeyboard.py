@@ -1,4 +1,5 @@
 import keyboard, time
+# kabyle keys
 letters = {
     "o":"ɣ",
     "c":"ṣ",
@@ -7,6 +8,7 @@ letters = {
     "#":"ṭ",
     "`":"ẓ",
 }
+# replace the blocked key
 def new_click(n) :
     try:
         if n in letters.keys() :
@@ -15,5 +17,6 @@ def new_click(n) :
             keyboard.write(letters[n])
     except :
         exit()
+# using the keyboard
 while True :
     new_click(keyboard.read_key())
