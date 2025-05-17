@@ -7,7 +7,7 @@ class OnScreenKeyboardTk(tk.Tk):
         self.title("On-Screen Keyboard")
         self.configure(bg='#1e1e1e')
         # Reduced size
-        self.geometry('900x350')
+        self.geometry('900x378')
         self.resizable(False, False)
 
         # Key layout with (label, colspan, keycode)
@@ -17,11 +17,11 @@ class OnScreenKeyboardTk(tk.Tk):
             [('Tab',1.2,'tab'), ('Q',1,'q'), ('W',1,'w'), ('E',1,'e'), ('R',1,'r'), ('T',1,'t'), ('Y',1,'y'), ('U',1,'u'),
              ('I',1,'i'), ('ɣ',1,'g'), ('P',1,'p'), ('[ {',1,'['), ('] }',1,']'), ('\\ |',1,'\\'), ('Del',2,'delete')],
             [('Caps',1.5,'capslock'), ('A',1,'a'), ('S',1,'s'), ('D',1,'d'), ('F',1,'f'), ('G',1,'g'), ('H',1,'h'), ('J',1,'j'),
-             ('K',1,'k'), ('L',1,'l'), ('; :',1,';'), ("' \"",1,"'"), ('Enter',2,'enter')],
-            [('Shift',2,'shift'), ('Z',1,'z'), ('X',1,'x'), ('ṣ',1,'s'), ('V',1,'v'), ('B',1,'b'), ('N',1,'n'), ('M',1,'m'),
-             (', <',1,','), ('. >',1,'.'), ('/ ?',1,'/'), ('Shift',2,'shift')],
-            [('Ctrl',1,'ctrl'), ('Win',1,'win'), ('Alt',1,'alt'), ('Space',4,'space'), ('Alt',1,'alt'), ('Ctrl',1,'ctrl'),
-             ('←',1,'left'), ('↓',1,'down'), ('→',1,'right'),('↑',1,'top')]
+             ('K',1,'k'), ('L',1,'l'), ('; :',1,';'), ("' \"",1,"'"), ('Enter',3.8,'enter')],
+            [('Shift',3,'shift'), ('Z',1,'z'), ('X',1,'x'), ('ṣ',1,'s'), ('V',1,'v'), ('B',1,'b'), ('N',1,'n'), ('M',1,'m'),
+             (', <',1,','), ('. >',1,'.'), ('/ ?',1,'/'), ('Shift',4,'shift')],
+            [('Ctrl',1,'ctrl'), ('Win',1,'win'), ('Alt',1,'alt'), ('Space',6,'space'), ('Alt',1,'alt'), ('Ctrl',1,'ctrl'),
+            ('←',1,'left'), ('↓',1.2,'down'), ('→',1.2,'right'),('↑',1.2,'top')]
         ]
 
         for r, row in enumerate(rows):
@@ -45,7 +45,7 @@ class OnScreenKeyboardTk(tk.Tk):
             pyautogui.keyDown(key)
             pyautogui.keyUp(key)
         else:
-            pyautogui.press(key)
+            pyautogui.hotkey(key)
 
 if __name__ == '__main__':
     OnScreenKeyboardTk().mainloop()
