@@ -12,6 +12,10 @@ The Kabyle language uses the following Latin-based characters (including additio
 - **Consonants**: b, d, f, g, h, j, k, l, m, n, p, q, r, s, t, v, w, x, y, z  
 - **Additional letters** for native sounds:
   - **ɣ** (voiced uvular fricative)
+  - **ɛ** (voiced pharyngeal fricative)
+  - **ḍ** (emphatic voiced alveolar stop / pharyngealized d))
+  - **ǧ** (voiced postalveolar affricate)
+  - **č** (voiceless postalveolar affricate)
   - **ḥ** (voiceless pharyngeal fricative)
   - **ṛ** (retroflex r)
   - **ṣ** (emphatic s)
@@ -19,3 +23,4 @@ The Kabyle language uses the following Latin-based characters (including additio
   - **ẓ** (emphatic z)
 
 > This set covers all letters used to write modern Kabyle in Latin script.
+> Check [Unicode CLDR](https://www.unicode.org/cldr/charts/47/summary/kab.html)
