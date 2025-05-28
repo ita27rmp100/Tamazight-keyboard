@@ -31,15 +31,16 @@ def BlockExKeyBoard(event) :
     return "break"
 # --- GUI settings ---
 t = Tk()
-t.title("On-Screen Keyboard")
+t.title("Tifrat n ugdil")
 t.configure(bg='#1e1e1e')
 t.attributes("-topmost",True)
 t.focus_force()
 t.geometry('900x390')
 t.resizable(False, False)
+t.iconbitmap("kabyle_keyboard.ico")
 # define the menu of copy,cut, paste
-my_menu = Menu(t)
-file_menu = Menu(my_menu)
+my_menu = Menu(t,tearoff=0,activeborderwidth=0)
+file_menu = Menu(my_menu,tearoff=0,activeborderwidth=0)
 my_menu.add_command(label="Nɣel "+" "*20,command=lambda :pyautogui.hotkey("ctrl","c"))
 my_menu.add_command(label="Gzem  ",command=lambda :pyautogui.hotkey("ctrl","x"))
 my_menu.add_command(label="Senteḍ",command=lambda :pyautogui.hotkey("ctrl","v"))
@@ -69,11 +70,12 @@ rows = [
 ]
 # Create the gui components
 written = Entry(t,font=("Segoe UI",14),background="#4c4c4c",fg="white",bd=2)
-written.grid(row=0,column=0,columnspan=30,sticky='nsew',padx=1,pady=1)
+written.grid(row=0,column=0,columnspan=30,sticky='nsew',padx=0,pady=0)
 written.bind("<Key>",BlockExKeyBoard)
 written.focus_set()
 for r, row in enumerate(rows):
     col = 0
+    t.grid_rowconfigure(r+1,minsize=50,weight=1)
     for label, span, keycode in row:
         btn = Button(
             t,
