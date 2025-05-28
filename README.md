@@ -17,6 +17,9 @@ The Kabyle language uses the following Latin-based characters (including additio
   - **ṣ** (emphatic s)
   - **ṭ** (emphatic t)
   - **ẓ** (emphatic z)
+  - **ɛ** (voiced pharyngeal fricative)
+  - **ḍ** (emphatic voiced alveolar stop / pharyngealized d)
+  - **ǧ** (voiced postalveolar affricate)
+  - **č** (voiceless postalveolar affricate)
 
 > This set covers all letters used to write modern Kabyle in Latin script.
-on-screen-keyboard behaves like the on-screen-keyboard of windows system using Tkinter.
