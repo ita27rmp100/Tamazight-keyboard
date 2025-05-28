@@ -19,3 +19,4 @@ The Kabyle language uses the following Latin-based characters (including additio
   - **ẓ** (emphatic z)
 
 > This set covers all letters used to write modern Kabyle in Latin script.
+on-screen-keyboard behaves like the on-screen-keyboard of windows system using Tkinter.
