@@ -1,30 +1,51 @@
 from tkinter import *
 import pyautogui
 
+
 # --- callback to fire when any key button is pressed ---
 upper = False
 def press_key(key):
     global upper
-    if key in ('shift', 'ctrl', 'alt', 'win', 'capslock'):
+    skey = str(key)
+    if skey in ('shift', 'ctrl', 'alt', 'win', 'capslock','enter',"left","right","top","down"):
         pyautogui.keyDown(key)
         pyautogui.keyUp(key)
         if key == "capslock" :
             upper = bool(abs(upper-1))
+    elif skey == "space" :
+        written.insert(END,' ')
+    elif skey == "backspace" :
+        current = written.get()
+        written.delete(0,END)
+        written.insert(0,current[:-1])
+    elif skey == "delete" :
+        written.delete(0,END)
+    elif skey == "esc" :
+        t.iconify()
     else:
         if not upper :
-            pyautogui.write(key)
-            skey = key
+            written.insert(END,key)
         else :
-            pyautogui.write(str(key).upper())
-
-# --- create the main window ---
+            written.insert(END,skey.upper())
+def BlockExKeyBoard(event) :
+    return "break"
+# --- GUI settings ---
 t = Tk()
 t.title("On-Screen Keyboard")
 t.configure(bg='#1e1e1e')
 t.attributes("-topmost",True)
 t.focus_force()
-t.geometry('900x378')
+t.geometry('900x390')
 t.resizable(False, False)
+# define the menu of copy,cut, paste
+my_menu = Menu(t)
+file_menu = Menu(my_menu)
+my_menu.add_command(label="Nɣel "+" "*20,command=lambda :pyautogui.hotkey("ctrl","c"))
+my_menu.add_command(label="Gzem  ",command=lambda :pyautogui.hotkey("ctrl","x"))
+my_menu.add_command(label="Senteḍ",command=lambda :pyautogui.hotkey("ctrl","v"))
+def my_pop(e) : 
+    my_menu.tk_popup(e.x_root,e.y_root)
+t.bind("<Button-3>",my_pop)
 # --- define the rows of keys: (label, colspan, pyautogui code) ---
 rows = [
     [('Ṛeḥ',1,'esc'), ('~',1,'z'), ('1',1,'1'), ('2',1,'2'),
@@ -46,15 +67,14 @@ rows = [
      ('Tallunt',6,'space'), ('Nniḍen',1,'alt'), ('Sefrek',1,'ctrl'),
      ('←',1,'left'), ('↓',1.2,'down'), ('→',1.2,'right'), ('↑',1.2,'top')]
 ]
-
-# --- create all the buttons ---
-written = Entry(t,font=("Segoe UI",14))
+# Create the gui components
+written = Entry(t,font=("Segoe UI",14),background="#4c4c4c",fg="white",bd=2)
 written.grid(row=0,column=0,columnspan=30,sticky='nsew',padx=1,pady=1)
+written.bind("<Key>",BlockExKeyBoard)
 written.focus_set()
 for r, row in enumerate(rows):
     col = 0
     for label, span, keycode in row:
-        print(label,span,keycode)
         btn = Button(
             t,
             text=label,
@@ -65,7 +85,7 @@ for r, row in enumerate(rows):
             bd=0,
             font=('Segoe UI', 8),
             relief='flat',
-            command=press_key(keycode)
+            command=lambda k=keycode: press_key(k)
         )
         btn.grid(row=r+1, column=col, columnspan=int(span*2),  # row+1 to account for Entry
                  padx=1, pady=1, sticky='nsew')
