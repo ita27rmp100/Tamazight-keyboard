@@ -4,7 +4,9 @@ In this project, I'm about to create a keyboard for Kabyle language.
 ## Overview :
   The idea of this project is to create a keyboard that support Tamazight langauge with the kabyle letters that Mouloud Mameri invented the previous centuary.
       There are two types of keyoards in this project :
+      <br>
         **-1- CustomKeyboard :** to write in kabyle using the prephirical keyboard.
+        <br>
         **-1- On-Screen-keyboard :** GUI keyboard that works like the original on-screen-keyboard of windows, but to write kabyle Tamazight letters.
 ## Kabyle Alphabet
 The Kabyle language uses the following Latin-based characters (including additional letters for specific sounds):
@@ -35,6 +37,7 @@ The Kabyle language uses the following Latin-based characters (including additio
 - You will clearly notice that the On-screen-keyboard doesn't work 100% effective, it should writes in the previous focused slot not in an Entry slot in the GUI itself, I tried to do that but I didn't know/find how, So I invite you to add this feauture.
 ## Installing
 To develop the project on your device, clone the repository :
+
 ```bash
 git clone https://github.com/ita27rmp100/Tamazight-keyboard.git
 ```
