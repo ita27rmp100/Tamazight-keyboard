@@ -1,7 +1,4 @@
 # Tamazight-keyboard
-In this project, I'm about to create a keyboard for Kabyle language.
-
-## Overview :
   The idea of this project is to create a keyboard that support Tamazight langauge with the kabyle letters that Mouloud Mameri invented the previous centuary.
       There are two types of keyoards in this project :
       <br>

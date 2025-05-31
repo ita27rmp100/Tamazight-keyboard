@@ -1,7 +1,5 @@
 from tkinter import *
 import pyautogui
-
-
 # --- callback to fire when any key button is pressed ---
 upper = False
 def press_key(key):
