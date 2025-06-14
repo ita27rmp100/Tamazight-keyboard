@@ -43,7 +43,7 @@ git clone https://github.com/ita27rmp100/Tamazight-keyboard.git
 ```
 
 ## Contributing
-Contributions are welcome! If you have suggestions for new tools or improvements to existing ones, please fork the repository and submit a pull request.
+Contributions are welcome! If you have suggestions or an idea that can improve my Tamazight-Keyboard, please fork the repository and submit a pull request.
 
 ## Support me :
 <p><a href="https://ko-fi.com/ita27rmp100"> <img align="left" src="https://cdn.ko-fi.com/cdn/kofi3.png?v=3" height="50" width="210" alt="ita27rmp100" /></a></p><br><br>
