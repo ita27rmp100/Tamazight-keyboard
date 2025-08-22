@@ -26,7 +26,7 @@ def shiftUp(e) :
 def toogleMode() :
     global modes , WriteKabyle
     WriteKabyle = not WriteKabyle
-    notify("Change Langauge",f"The Kabyle keyboard is {modes[int(WriteKabyle)]}")
+    notify("Change Language",f"The Kabyle keyboard is {modes[int(WriteKabyle)]}")
 def UpperToggle() :
     global Upper
     Upper = not Upper
